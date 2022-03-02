@@ -19,3 +19,7 @@ This will yield the following errors:
 
 The error appears to be that it is using mock_outputs of kms_key_id_primary and kms_key_id_secondary of account-settings module during apply. Instead, during apply, it should be using the actual values of kms_key_id_primary and kms_key_id_secondary.
 
+THE ONLY WAY IT WORKS IS IF I HARDCODE THE ACTUAL VALUES IN my-download-bucket:
+
+    kms_key_arn                 = "arn:aws:kms:us-east-1:975474249947:key/e80ba519-a16b-458a-9807-798191d06df8"
+    replication_kms_key_arn     = "arn:aws:kms:us-west-2:975474249947:key/f7dbdff3-e2ed-48e5-a7c5-c6e9d10c8a35"
